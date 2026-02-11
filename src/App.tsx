@@ -17,6 +17,7 @@ import { BookOpen, Home } from "lucide-react";
 import { Layout } from "./components/refine-ui/layout/layout";
 import SubjectLists from "./pages/subjects/List";
 import SubjectCreate from "./pages/subjects/Create";
+import { authProvider } from "./providers/authProvider";
 
 function App() {
   return (
@@ -26,8 +27,9 @@ function App() {
         <ThemeProvider>
           <DevtoolsProvider>
             <Refine
+              authProvider={authProvider}
               dataProvider={dataProvider}
-              notificationProvider={useNotificationProvider()}
+              // notificationProvider={useNotificationProvider()}
               routerProvider={routerProvider}
               options={{
                 syncWithLocation: true,
